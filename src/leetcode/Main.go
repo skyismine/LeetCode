@@ -31,7 +31,8 @@ func main() {
 	fmt.Println(problems.IsPalindrome(121, "mine"))
 	fmt.Println(problems.IsPalindrome(1234, "mine"))
 	fmt.Println(problems.IsPalindrome(10, "mine"))*/
-	fmt.Println(problems.IsPalindrome(math.MaxInt32, "mine"))
+	fmt.Println(problems.IsPalindrome(math.MaxInt32, "lca"))
+	fmt.Println(problems.IsPalindrome(1221, "lca"))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
