@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"math"
 	"os"
 	"problems"
 	"runtime/pprof"
@@ -23,7 +22,7 @@ func main() {
 		defer pprof.StopCPUProfile()
 	}
 	start := time.Now()
-	fmt.Println(problems.TwoSum([]int{11, 15, 18, 20, -3, -5, 90, 2, 7}, 9, "baoli"))
+	/*fmt.Println(problems.TwoSum([]int{11, 15, 18, 20, -3, -5, 90, 2, 7}, 9, "baoli"))
 	fmt.Println(problems.TwoSum([]int{11, 15, 18, 20, -3, -5, 90, 2, 7}, 9, "hash2"))
 	fmt.Println(problems.TwoSum([]int{11, 15, 18, 20, -3, -5, 90, 2, 7}, 9, "hash1"))
 	fmt.Println(problems.Reverse(1534, "lca"))
@@ -39,6 +38,12 @@ func main() {
 	fmt.Println(problems.RomanToInt("LVIII", "mine2"))
 	fmt.Println(problems.RomanToInt("MCMXCIV", "mine2"))
 	fmt.Println(problems.RomanToInt("DCXXI", "mine2"))
+	fmt.Println(problems.LongestCommonPrefix(nil, "mine"))
+	fmt.Println(problems.LongestCommonPrefix([]string{"flower","flow","flight"}, "mine"))
+	fmt.Println(problems.LongestCommonPrefix([]string{"dog","racecar","car"}, "mine"))*/
+	fmt.Println(problems.LongestCommonPrefix(nil, "lca"))
+	fmt.Println(problems.LongestCommonPrefix([]string{"flower","flow","flight"}, "lca"))
+	fmt.Println(problems.LongestCommonPrefix([]string{"dog","racecar","car"}, "lca"))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()

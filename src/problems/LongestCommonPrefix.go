@@ -1,6 +1,7 @@
 package problems
 
 import (
+	"commonds"
 	"math"
 )
 
@@ -44,7 +45,7 @@ func LongestCommonPrefix(strs []string, method string) string {
    空间复杂度: O(len(strs[0])+len(strs[1])+...+len(strs[n]))
  */
 func longestCommonPrefixMine(strs []string) string {
-	if len(strs) == 0 {
+	if strs == nil || len(strs) == 0 {
 		return ""
 	}
 
@@ -87,7 +88,26 @@ func longestCommonPrefixMine(strs []string) string {
 
 最后的问题就是如何找到字典树中满足上述所有要求的最深节点。 最有效的方法就是建立一颗包含字符串 [S1...Sn] 的字典树。 然后在这颗树中匹配 q 的前缀。 我们从根节点遍历这颗字典树，直到因为不能满足某个条件而不能再遍历为止。
 
+复杂度分析
+
+最坏情况下查询字符串 q 的长度为 m 并且它与数组中 n 个字符串均相同。
+
+时间复杂度：预处理过程 O(S)，其中 S 是数组里所有字符串中字符数量的总和，最长公共前缀查询操作的复杂度为 O(m)。
+
+建立字典树的时间复杂度为 O(S)。 在字典树中查找字符串 q 的最长公共前缀在最坏情况下需要 O(m) 的时间。
+
+空间复杂度：O(S)， 我们只需要使用额外的 S 空间建立字典树。
  */
 func longestCommonPrefixLCA(strs []string) string {
-	return ""
+	if strs == nil || len(strs) == 0 {
+		return ""
+	}
+	root := commonds.NewTireRoot()
+	for _,value := range strs {
+		if len(value) == 0 {
+			return ""
+		}
+		root.Insert(value)
+	}
+	return root.SearchLCP(strs[0])
 }
