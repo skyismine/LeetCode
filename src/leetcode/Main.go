@@ -40,10 +40,22 @@ func main() {
 	fmt.Println(problems.RomanToInt("DCXXI", "mine2"))
 	fmt.Println(problems.LongestCommonPrefix(nil, "mine"))
 	fmt.Println(problems.LongestCommonPrefix([]string{"flower","flow","flight"}, "mine"))
-	fmt.Println(problems.LongestCommonPrefix([]string{"dog","racecar","car"}, "mine"))*/
+	fmt.Println(problems.LongestCommonPrefix([]string{"dog","racecar","car"}, "mine"))
 	fmt.Println(problems.LongestCommonPrefix(nil, "lca"))
 	fmt.Println(problems.LongestCommonPrefix([]string{"flower","flow","flight"}, "lca"))
 	fmt.Println(problems.LongestCommonPrefix([]string{"dog","racecar","car"}, "lca"))
+	fmt.Println(problems.IsValid("([]", "mine"))
+	fmt.Println(problems.IsValid("()", "mine"))
+	fmt.Println(problems.IsValid("()[]{}", "mine"))
+	fmt.Println(problems.IsValid("(]", "mine"))
+	fmt.Println(problems.IsValid("([)]", "mine"))
+	fmt.Println(problems.IsValid("{[]}", "mine"))*/
+	fmt.Println(problems.IsValid("([]", "lca"))
+	fmt.Println(problems.IsValid("()", "lca"))
+	fmt.Println(problems.IsValid("()[]{}", "lca"))
+	fmt.Println(problems.IsValid("(]", "lca"))
+	fmt.Println(problems.IsValid("([)]", "lca"))
+	fmt.Println(problems.IsValid("{[]}", "lca"))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
