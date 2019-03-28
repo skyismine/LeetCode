@@ -1,6 +1,9 @@
 package problems
 
-import "commonds"
+import (
+	"commonds"
+	"utils"
+)
 
 /**
 题目描述：
@@ -68,7 +71,7 @@ func isValidMine(s string) bool {
 		return true
 	}
 
-	sbytes := []byte(s)
+	sbytes := utils.StringBytes(s)
 	stack := commonds.NewStack()
 	for _,value := range sbytes {
 		if value == '(' || value == '[' || value == '{' {
@@ -100,7 +103,7 @@ func isValidLCA(s string) bool {
 		'}':'{',
 	}
 
-	sbytes := []byte(s)
+	sbytes := utils.StringBytes(s)
 	stack := commonds.NewStack()
 
 	for _,value := range sbytes {

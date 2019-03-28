@@ -1,7 +1,24 @@
 package commonds
 
+import "utils"
+
 /**
-字典树结构和实现
+字典树
+ */
+type Tire struct {
+	root *TireNode
+}
+
+/**
+创建 Tire
+ */
+func NewTire() (*Tire) {
+	return &Tire{&TireNode{make([]*TireNode, 26), 0, false, 0, 0}}
+}
+
+
+/**
+字典树节点结构和实现
 
 详细文档参见 doc/commonds/Tire.md
 */
@@ -21,19 +38,19 @@ type TireNode struct {
 /**
  打印字典树
  */
-func (root *TireNode) Print() {
+func (root *Tire) Print() {
 
 }
 
 /**
  插入一个字符串到字典树
  */
-func (root *TireNode) Insert(word string) {
+func (tire *Tire) Insert(word string) {
 	if word == "" {
 		return
 	}
-	strbytes := []byte(word)
-	node := root
+	strbytes := utils.StringBytes(word)
+	node := tire.root
 	for index, value := range strbytes {
 		newnode := node.Links[value-'a']
 		if newnode == nil {
@@ -54,12 +71,13 @@ func (root *TireNode) Insert(word string) {
 /**
  查找字典树和给定字符串的最长公共前缀(Longest Common Prefix)
  */
-func (root *TireNode) SearchLCP(word string) (prefix string) {
+func (tire *Tire) SearchLCP(word string) (prefix string) {
+	root := tire.root
 	if word == "" || root.Size != 1 {
 		return ""
 	}
 	var prefixbytes []byte
-	wordbytes := []byte(word)
+	wordbytes := utils.StringBytes(word)
 	node := root;
 	for _,value := range wordbytes {
 		// nextnode 用于做字符匹配，判断当前字符是否存在，如果是 nil 则说明当前字符不存在
@@ -75,8 +93,4 @@ func (root *TireNode) SearchLCP(word string) (prefix string) {
 	}
 
 	return string(prefixbytes)
-}
-
-func NewTireRoot() (*TireNode) {
-	return &TireNode{make([]*TireNode, 26), 0, false, 0, 0}
 }

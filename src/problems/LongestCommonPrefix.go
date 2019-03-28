@@ -3,6 +3,7 @@ package problems
 import (
 	"commonds"
 	"math"
+	"utils"
 )
 
 /**
@@ -61,11 +62,11 @@ func longestCommonPrefixMine(strs []string) string {
 	}
 
 	var ret []byte
-	var firstbytes []byte = []byte(strs[0])
+	var firstbytes []byte = utils.StringBytes(strs[0])
 
 	for i := 0; i < minlen; i++ {
 		for j := 1; j < len(strs); j++ {
-			curr := []byte(strs[j])
+			curr := utils.StringBytes(strs[j])
 			if firstbytes[i] != curr[i] {
 				return string(ret)
 			}
@@ -102,12 +103,12 @@ func longestCommonPrefixLCA(strs []string) string {
 	if strs == nil || len(strs) == 0 {
 		return ""
 	}
-	root := commonds.NewTireRoot()
+	tire := commonds.NewTire()
 	for _,value := range strs {
 		if len(value) == 0 {
 			return ""
 		}
-		root.Insert(value)
+		tire.Insert(value)
 	}
-	return root.SearchLCP(strs[0])
+	return tire.SearchLCP(strs[0])
 }

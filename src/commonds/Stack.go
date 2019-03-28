@@ -14,6 +14,14 @@ type Stack struct {
 	top int
 }
 
+/**
+创建 Stack
+ */
+func NewStack() *Stack {
+	return &Stack{make([]interface{}, 0), 0}
+}
+
+
 // 入栈
 func (stack *Stack) Push(e interface{}) error {
 	stack.element = append(stack.element, e)
@@ -45,8 +53,4 @@ func (stack *Stack) Top() (interface{}, error) {
 	}
 
 	return stack.element[stack.top], nil
-}
-
-func NewStack() *Stack {
-	return &Stack{make([]interface{}, 0), 0}
 }

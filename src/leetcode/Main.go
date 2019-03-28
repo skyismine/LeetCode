@@ -49,14 +49,41 @@ func main() {
 	fmt.Println(problems.IsValid("()[]{}", "mine"))
 	fmt.Println(problems.IsValid("(]", "mine"))
 	fmt.Println(problems.IsValid("([)]", "mine"))
-	fmt.Println(problems.IsValid("{[]}", "mine"))*/
+	fmt.Println(problems.IsValid("{[]}", "mine"))
 	fmt.Println(problems.IsValid("([]", "lca"))
 	fmt.Println(problems.IsValid("()", "lca"))
 	fmt.Println(problems.IsValid("()[]{}", "lca"))
 	fmt.Println(problems.IsValid("(]", "lca"))
 	fmt.Println(problems.IsValid("([)]", "lca"))
-	fmt.Println(problems.IsValid("{[]}", "lca"))
+	fmt.Println(problems.IsValid("{[]}", "lca"))*/
+	l1 := &problems.ListNode{1, &problems.ListNode{2, &problems.ListNode{4, nil}}}
+	l2 := &problems.ListNode{1, &problems.ListNode{3, &problems.ListNode{4, nil}}}
+	l3 := problems.MergeTwoLists(l1, l2, "mine")
+	printLinkedList([]*problems.ListNode{l1, l2, l3})
+	l1 = &problems.ListNode{2, nil}
+	l2 = &problems.ListNode{1, nil}
+	l3 = problems.MergeTwoLists(l1, l2, "mine")
+	printLinkedList([]*problems.ListNode{l1, l2, l3})
+	l1 = &problems.ListNode{5, nil}
+	l2 = &problems.ListNode{1,  &problems.ListNode{2,  &problems.ListNode{4, nil}}}
+	l3 = problems.MergeTwoLists(l1, l2, "mine")
+	printLinkedList([]*problems.ListNode{l1, l2, l3})
+	l1 = &problems.ListNode{-10, &problems.ListNode{-9, &problems.ListNode{-6, &problems.ListNode{-4, &problems.ListNode{1, &problems.ListNode{9, &problems.ListNode{9, nil}}}}}}}
+	l2 = &problems.ListNode{-5,  &problems.ListNode{-3,  &problems.ListNode{0, &problems.ListNode{7, &problems.ListNode{8, &problems.ListNode{8, nil}}}}}}
+	l3 = problems.MergeTwoLists(l1, l2, "mine")
+	printLinkedList([]*problems.ListNode{l1, l2, l3})
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
+}
+
+func printLinkedList(la []*problems.ListNode) {
+	for _,value := range la {
+		linkedlist := value
+		for linkedlist != nil  {
+			fmt.Print(linkedlist.Val, "\t")
+			linkedlist = linkedlist.Next
+		}
+		fmt.Println()
+	}
 }
