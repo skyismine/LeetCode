@@ -55,7 +55,7 @@ func main() {
 	fmt.Println(problems.IsValid("()[]{}", "lca"))
 	fmt.Println(problems.IsValid("(]", "lca"))
 	fmt.Println(problems.IsValid("([)]", "lca"))
-	fmt.Println(problems.IsValid("{[]}", "lca"))*/
+	fmt.Println(problems.IsValid("{[]}", "lca"))
 	l1 := &problems.ListNode{1, &problems.ListNode{2, &problems.ListNode{4, nil}}}
 	l2 := &problems.ListNode{1, &problems.ListNode{3, &problems.ListNode{4, nil}}}
 	l3 := problems.MergeTwoLists(l1, l2, "mine")
@@ -71,10 +71,23 @@ func main() {
 	l1 = &problems.ListNode{-10, &problems.ListNode{-9, &problems.ListNode{-6, &problems.ListNode{-4, &problems.ListNode{1, &problems.ListNode{9, &problems.ListNode{9, nil}}}}}}}
 	l2 = &problems.ListNode{-5,  &problems.ListNode{-3,  &problems.ListNode{0, &problems.ListNode{7, &problems.ListNode{8, &problems.ListNode{8, nil}}}}}}
 	l3 = problems.MergeTwoLists(l1, l2, "mine")
-	printLinkedList([]*problems.ListNode{l1, l2, l3})
+	printLinkedList([]*problems.ListNode{l1, l2, l3})*/
+	arr := []int{1,1,2}
+	len := 0
+	len = problems.RemoveDuplicates(arr, "mine")
+	len = problems.RemoveDuplicates(arr, "lca")
+	fmt.Println(len, arr)
+	arr = []int{0,0,1,1,1,2,2,3,3,4}
+	len = problems.RemoveDuplicates(arr, "mine")
+	len = problems.RemoveDuplicates(arr, "lca")
+	fmt.Println(len, arr)
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
+	/*select {
+	case <-time.After(10*time.Second):
+		break
+	}*/
 }
 
 func printLinkedList(la []*problems.ListNode) {
