@@ -71,7 +71,7 @@ func main() {
 	l1 = &problems.ListNode{-10, &problems.ListNode{-9, &problems.ListNode{-6, &problems.ListNode{-4, &problems.ListNode{1, &problems.ListNode{9, &problems.ListNode{9, nil}}}}}}}
 	l2 = &problems.ListNode{-5,  &problems.ListNode{-3,  &problems.ListNode{0, &problems.ListNode{7, &problems.ListNode{8, &problems.ListNode{8, nil}}}}}}
 	l3 = problems.MergeTwoLists(l1, l2, "mine")
-	printLinkedList([]*problems.ListNode{l1, l2, l3})*/
+	printLinkedList([]*problems.ListNode{l1, l2, l3})
 	arr := []int{1,1,2}
 	len := 0
 	len = problems.RemoveDuplicates(arr, "mine")
@@ -80,7 +80,13 @@ func main() {
 	arr = []int{0,0,1,1,1,2,2,3,3,4}
 	len = problems.RemoveDuplicates(arr, "mine")
 	len = problems.RemoveDuplicates(arr, "lca")
-	fmt.Println(len, arr)
+	fmt.Println(len, arr)*/
+	nums := []int{3,2,2,3}
+	len := problems.RemoveElement(nums, 3, "lca")
+	fmt.Println(len, nums)
+	nums = []int{0,1,2,2,3,0,4,2}
+	len = problems.RemoveElement(nums, 2, "lca")
+	fmt.Println(len, nums)
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
