@@ -80,13 +80,17 @@ func main() {
 	arr = []int{0,0,1,1,1,2,2,3,3,4}
 	len = problems.RemoveDuplicates(arr, "mine")
 	len = problems.RemoveDuplicates(arr, "lca")
-	fmt.Println(len, arr)*/
+	fmt.Println(len, arr)
 	nums := []int{3,2,2,3}
 	len := problems.RemoveElement(nums, 3, "lca")
 	fmt.Println(len, nums)
 	nums = []int{0,1,2,2,3,0,4,2}
 	len = problems.RemoveElement(nums, 2, "lca")
-	fmt.Println(len, nums)
+	fmt.Println(len, nums)*/
+	fmt.Println(problems.StrStr("hello", "ll", "mine"))
+	fmt.Println(problems.StrStr("aaaaa", "bba", "mine"))
+	fmt.Println(problems.StrStr("a", "a", "mine"))
+	fmt.Println(problems.StrStr("mississippi", "issip", "mine"))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
