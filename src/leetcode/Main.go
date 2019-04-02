@@ -86,11 +86,15 @@ func main() {
 	fmt.Println(len, nums)
 	nums = []int{0,1,2,2,3,0,4,2}
 	len = problems.RemoveElement(nums, 2, "lca")
-	fmt.Println(len, nums)*/
+	fmt.Println(len, nums)
 	fmt.Println(problems.StrStr("hello", "ll", "mine"))
 	fmt.Println(problems.StrStr("aaaaa", "bba", "mine"))
 	fmt.Println(problems.StrStr("a", "a", "mine"))
-	fmt.Println(problems.StrStr("mississippi", "issip", "mine"))
+	fmt.Println(problems.StrStr("mississippi", "issip", "mine"))*/
+	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 5, "mine"))
+	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 2, "mine"))
+	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 7, "mine"))
+	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 0, "mine"))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
