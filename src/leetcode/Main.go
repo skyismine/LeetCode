@@ -94,7 +94,7 @@ func main() {
 	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 5, "mine"))
 	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 2, "mine"))
 	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 7, "mine"))
-	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 0, "mine"))*/
+	fmt.Println(problems.SearchInsert([]int{1,3,5,6}, 0, "mine"))
 	fmt.Println(problems.CountAndSay(1, "mine"))
 	fmt.Println(problems.CountAndSay(2, "mine"))
 	fmt.Println(problems.CountAndSay(3, "mine"))
@@ -104,7 +104,10 @@ func main() {
 	fmt.Println(problems.CountAndSay(7, "mine"))
 	fmt.Println(problems.CountAndSay(8, "mine"))
 	fmt.Println(problems.CountAndSay(9, "mine"))
-	fmt.Println(problems.CountAndSay(10, "mine"))
+	fmt.Println(problems.CountAndSay(10, "mine"))*/
+	l1 := &problems.ListNode{7, &problems.ListNode{8, &problems.ListNode{8, nil}}}
+	l2 := &problems.ListNode{5,  &problems.ListNode{6,  &problems.ListNode{4, nil}}}
+	printLinkedList([]*problems.ListNode{problems.AddTwoNumbers(l1, l2, "mine")})
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
@@ -118,7 +121,7 @@ func printLinkedList(la []*problems.ListNode) {
 	for _,value := range la {
 		linkedlist := value
 		for linkedlist != nil  {
-			fmt.Print(linkedlist.Val, "\t")
+			fmt.Printf("%d\t", linkedlist.Val)
 			linkedlist = linkedlist.Next
 		}
 		fmt.Println()
