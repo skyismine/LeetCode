@@ -104,10 +104,13 @@ func main() {
 	fmt.Println(problems.CountAndSay(7, "mine"))
 	fmt.Println(problems.CountAndSay(8, "mine"))
 	fmt.Println(problems.CountAndSay(9, "mine"))
-	fmt.Println(problems.CountAndSay(10, "mine"))*/
+	fmt.Println(problems.CountAndSay(10, "mine"))
 	l1 := &problems.ListNode{7, &problems.ListNode{8, &problems.ListNode{8, nil}}}
 	l2 := &problems.ListNode{5,  &problems.ListNode{6,  &problems.ListNode{4, nil}}}
-	printLinkedList([]*problems.ListNode{problems.AddTwoNumbers(l1, l2, "mine")})
+	printLinkedList([]*problems.ListNode{problems.AddTwoNumbers(l1, l2, "mine")})*/
+	fmt.Println(problems.LengthOfLongestSubstring("abcabcbb", "lca"))
+	fmt.Println(problems.LengthOfLongestSubstring("bbbbb", "lca"))
+	fmt.Println(problems.LengthOfLongestSubstring("pwwkew", "lca"))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
