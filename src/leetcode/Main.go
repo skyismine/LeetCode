@@ -110,10 +110,16 @@ func main() {
 	printLinkedList([]*problems.ListNode{problems.AddTwoNumbers(l1, l2, "mine")})
 	fmt.Println(problems.LengthOfLongestSubstring("abcabcbb", "lca"))
 	fmt.Println(problems.LengthOfLongestSubstring("bbbbb", "lca"))
-	fmt.Println(problems.LengthOfLongestSubstring("pwwkew", "lca"))*/
+	fmt.Println(problems.LengthOfLongestSubstring("pwwkew", "lca"))
 	fmt.Println(problems.FindMedianSortedArrays([]int{1,3}, []int{2}, "lca"))
 	fmt.Println(problems.FindMedianSortedArrays([]int{1,2}, []int{3,4}, "lca"))
-	fmt.Println(problems.FindMedianSortedArrays([]int{1,1,1,1,1,1,1,1,1,1,4,4}, []int{1,3,4,4,4,4,4,4,4,4,4}, "lca"))
+	fmt.Println(problems.FindMedianSortedArrays([]int{1,1,1,1,1,1,1,1,1,1,4,4}, []int{1,3,4,4,4,4,4,4,4,4,4}, "lca"))*/
+	fmt.Println(problems.LongestPalindrome("babad", "mine"))
+	fmt.Println(problems.LongestPalindrome("bb", "mine"))
+	fmt.Println(problems.LongestPalindrome("a", "mine"))
+	fmt.Println(problems.LongestPalindrome("ac", "mine"))
+	//fmt.Println(problems.LongestPalindrome("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "mine"))
+	fmt.Println(problems.LongestPalindrome("abcba", "mine"))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
