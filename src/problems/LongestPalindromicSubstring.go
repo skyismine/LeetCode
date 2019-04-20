@@ -52,8 +52,55 @@ func longestPalindromeMine(s string) string {
 	return lps
 }
 
+/**
+思路：动态规划
+给出定义　P(i,j) = true, 如果子串s[i]...s[j]是回文子串
+              false, 其他情况
+因此，
+P(i,j) = (P(i+1,j-1) and s[i] == s[j])
+基本示例如下：
+P(i,i) = true
+p(i,i+1) = (s[i] == s[i+1])
+这就产生了一个直观的动态规划解法，我们首先初始化一字母和二字母的回文，然后找到所有三字母回文，并以此类推
+
+复杂度分析：
+时间复杂度: O(n^2)
+空间复杂度: O(n^2)
+ */
 func longestPalindromeLCA(s string) string {
-	return ""
+	slen := len(s)
+	if slen == 0 {
+		return ""
+	}
+	sbytes := []byte(s)
+	lps := string(sbytes[0:1])
+	//定义二维数组
+	var pstore [][]bool
+	for i := 0; i < slen; i++ {
+		//定义变量或make生成变量后go会填充默认值 false
+		pstore = append(pstore, make([]bool, slen))
+	}
+	//先初始化所有一个字母和二个字母的回文
+	for i := 0; i < slen; i++ {
+		pstore[i][i] = true
+		if i+1 < slen {
+			pstore[i][i+1] = sbytes[i] == sbytes[i+1]
+			if pstore[i][i+1] && len(lps) < 2 {
+				lps = string(sbytes[i:i+2])
+			}
+		}
+	}
+
+	//计算所有回文并存储和使用中间结果，这样就将验证是否是回文这个操作的时间复杂度降低到了O(1)，整体时间复杂度也就降低到了O(n^2)
+	for i := 0; i < slen; i++ {
+		for j := i + 2; j < slen; j++ {
+			pstore[i][j] = pstore[i+1][j-1] && sbytes[i] == sbytes[j]
+			if pstore[i][j] && len(lps) < (j-i+1) {
+				lps = string(sbytes[i:j+1])
+			}
+		}
+	}
+	return lps
 }
 
 func isPalindrome(sbytes []byte) bool {
