@@ -81,22 +81,17 @@ func longestPalindromeLCA(s string) string {
 		pstore = append(pstore, make([]bool, slen))
 	}
 	//先初始化所有一个字母和二个字母的回文
-	for i := 0; i < slen; i++ {
-		pstore[i][i] = true
-		if i+1 < slen {
-			pstore[i][i+1] = sbytes[i] == sbytes[i+1]
-			if pstore[i][i+1] && len(lps) < 2 {
-				lps = string(sbytes[i:i+2])
+	//然后计算所有回文并存储和使用中间结果，这样就将验证是否是回文这个操作的时间复杂度降低到了O(1)，整体时间复杂度也就降低到了O(n^2)
+	//由于i依赖于i+1的结果，所以我们使用倒序来计算
+	for i := slen-1; i >= 0; i-- {
+		for j := 0; j < slen-i; j++ {
+			if j <= 1 {
+				pstore[i][i+j] = sbytes[i] == sbytes[i+j]
+			} else {
+				pstore[i][i+j] = pstore[i+1][i+j-1] && sbytes[i] == sbytes[i+j]
 			}
-		}
-	}
-
-	//计算所有回文并存储和使用中间结果，这样就将验证是否是回文这个操作的时间复杂度降低到了O(1)，整体时间复杂度也就降低到了O(n^2)
-	for i := 0; i < slen; i++ {
-		for j := i + 2; j < slen; j++ {
-			pstore[i][j] = pstore[i+1][j-1] && sbytes[i] == sbytes[j]
-			if pstore[i][j] && len(lps) < (j-i+1) {
-				lps = string(sbytes[i:j+1])
+			if pstore[i][i+j] && len(lps) <= j+1 {
+				lps = string(sbytes[i:i+j+1])
 			}
 		}
 	}
