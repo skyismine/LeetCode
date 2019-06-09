@@ -6,7 +6,7 @@
 *.dylib
 *.a
 */pkg/*
-
+*.prof
 # Test binary, build with `go test -c`
 *.test
 

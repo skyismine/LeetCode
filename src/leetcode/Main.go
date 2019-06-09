@@ -11,6 +11,7 @@ import (
 )
 
 var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
+
 func main() {
 	flag.Parse()
 	if *cpuprofile != "" {
@@ -113,13 +114,16 @@ func main() {
 	fmt.Println(problems.LengthOfLongestSubstring("pwwkew", "lca"))
 	fmt.Println(problems.FindMedianSortedArrays([]int{1,3}, []int{2}, "lca"))
 	fmt.Println(problems.FindMedianSortedArrays([]int{1,2}, []int{3,4}, "lca"))
-	fmt.Println(problems.FindMedianSortedArrays([]int{1,1,1,1,1,1,1,1,1,1,4,4}, []int{1,3,4,4,4,4,4,4,4,4,4}, "lca"))*/
+	fmt.Println(problems.FindMedianSortedArrays([]int{1,1,1,1,1,1,1,1,1,1,4,4}, []int{1,3,4,4,4,4,4,4,4,4,4}, "lca"))
 	fmt.Println(problems.LongestPalindrome("babad", "lca"))
 	fmt.Println(problems.LongestPalindrome("bb", "lca"))
 	fmt.Println(problems.LongestPalindrome("a", "lca"))
 	fmt.Println(problems.LongestPalindrome("ac", "lca"))
 	fmt.Println(problems.LongestPalindrome("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "lca"))
-	fmt.Println(problems.LongestPalindrome("abcba", "lca"))
+	fmt.Println(problems.LongestPalindrome("abcba", "lca"))*/
+	fmt.Println(problems.ZigzagConvert("LEETCODEISHIRING", 3))
+	fmt.Println(problems.ZigzagConvert("LEETCODEISHIRING", 4))
+	fmt.Println(problems.ZigzagConvert("A", 1))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
@@ -130,9 +134,9 @@ func main() {
 }
 
 func printLinkedList(la []*problems.ListNode) {
-	for _,value := range la {
+	for _, value := range la {
 		linkedlist := value
-		for linkedlist != nil  {
+		for linkedlist != nil {
 			fmt.Printf("%d\t", linkedlist.Val)
 			linkedlist = linkedlist.Next
 		}
