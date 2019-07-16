@@ -23,11 +23,11 @@ https://leetcode-cn.com/problems/add-two-numbers/
  *     Next *ListNode
  * }
  */
-func AddTwoNumbers(l1 *ListNode, l2 *ListNode, method string) *ListNode {
-	switch method {
-	case "mine":
+func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	switch METHOD {
+	case METHOD_MINE:
 		return addTwoNumbersMine(l1, l2)
-	case "lca":
+	case METHOD_LCA:
 		return addTwoNumbersLCA(l1, l2)
 	}
 

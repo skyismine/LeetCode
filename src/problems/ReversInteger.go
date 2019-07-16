@@ -27,11 +27,11 @@ import (
 
   https://leetcode-cn.com/problems/reverse-integer/
  */
-func Reverse(x int, method string) int {
-	switch method {
-	case "mine":
+func Reverse(x int) int {
+	switch METHOD {
+	case METHOD_MINE:
 		return reverseMine(x)
-	case "lca":
+	case METHOD_LCA:
 		return reverseLCA(x)
 	}
 	return 0

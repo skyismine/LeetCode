@@ -37,11 +37,11 @@ import (
 输入: "{[]}"
 输出: true
  */
-func IsValid(s string, method string) bool {
-	switch method {
-	case "mine":
+func IsValid(s string) bool {
+	switch METHOD {
+	case METHOD_MINE:
 		return isValidMine(s)
-	case "lca":
+	case METHOD_LCA:
 		return isValidLCA(s)
 	}
 

@@ -43,11 +43,11 @@ for (int i = 0; i < len; i++) {
 
 https://leetcode-cn.com/problems/remove-element/
  */
-func RemoveElement(nums []int, val int, method string) int {
-	switch method {
-	case "mine":
+func RemoveElement(nums []int, val int) int {
+	switch METHOD {
+	case METHOD_MINE:
 		return removeElementMine(nums, val)
-	case "lca":
+	case METHOD_LCA:
 		return removeElementLCA(nums, val)
 	}
 

@@ -14,11 +14,11 @@ package problems
 输入: "cbbd"
 输出: "bb"
  */
-func LongestPalindrome(s string, method string) string {
-	switch method {
-	case "mine":
+func LongestPalindrome(s string) string {
+	switch METHOD {
+	case METHOD_MINE:
 		return longestPalindromeMine(s)
-	case "lca":
+	case METHOD_LCA:
 		return longestPalindromeLCA(s)
 	}
 

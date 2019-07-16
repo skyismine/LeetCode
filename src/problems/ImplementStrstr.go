@@ -23,11 +23,11 @@ import "utils"
 
 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。
  */
-func StrStr(haystack string, needle string, method string) int {
-	switch method {
-	case "mine":
+func StrStr(haystack string, needle string) int {
+	switch METHOD {
+	case METHOD_MINE:
 		return strStrMine(haystack, needle)
-	case "lca":
+	case METHOD_LCA:
 		return strStrLCA(haystack, needle)
 	}
 

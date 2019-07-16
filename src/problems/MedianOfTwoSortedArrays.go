@@ -2,11 +2,11 @@ package problems
 
 import "math"
 
-func FindMedianSortedArrays(nums1 []int, nums2 []int, method string) float64 {
-	switch method {
-	case "mine":
+func FindMedianSortedArrays(nums1 []int, nums2 []int) float64 {
+	switch METHOD {
+	case METHOD_MINE:
 		return findMedianSortedArraysMine(nums1, nums2)
-	case "lca":
+	case METHOD_LCA:
 		return findMedianSortedArraysLCA(nums1, nums2)
 	}
 

@@ -30,11 +30,11 @@ package problems
 
 https://leetcode-cn.com/problems/count-and-say/
  */
-func CountAndSay(n int, method string) string {
-	switch method {
-	case "mine":
+func CountAndSay(n int) string {
+	switch METHOD {
+	case METHOD_MINE:
 		return countAndSayMine(n)
-	case "lca":
+	case METHOD_LCA:
 		return countAndSayLCA(n)
 	}
 

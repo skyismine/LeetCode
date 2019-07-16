@@ -37,7 +37,11 @@ T     S     G
 链接：https://leetcode-cn.com/problems/zigzag-conversion
 */
 func ZigzagConvert(s string, numRows int) string {
-	return zigzagConvertMine(s, numRows)
+	switch METHOD {
+	case METHOD_MINE:
+		return zigzagConvertMine(s, numRows)
+	}
+	return ""
 }
 
 /**

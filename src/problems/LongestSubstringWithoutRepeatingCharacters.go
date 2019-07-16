@@ -29,11 +29,11 @@ import (
 
 https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
  */
-func LengthOfLongestSubstring(s string, method string) int {
-	switch method {
-	case "mine":
+func LengthOfLongestSubstring(s string) int {
+	switch METHOD {
+	case METHOD_MINE:
 		return lengthOfLongestSubstringMine(s)
-	case "lca":
+	case METHOD_LCA:
 		return lengthOfLongestSubstringLCA(s)
 	}
 	return 0

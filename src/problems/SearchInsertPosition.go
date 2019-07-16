@@ -25,11 +25,11 @@ package problems
 
 https://leetcode-cn.com/problems/search-insert-position/
  */
-func SearchInsert(nums []int, target int, method string) int {
-	switch method {
-	case "mine":
+func SearchInsert(nums []int, target int) int {
+	switch METHOD {
+	case METHOD_MINE:
 		return searchInsertMine(nums, target)
-	case "lca":
+	case METHOD_LCA:
 		return searchInsertLCA(nums, target)
 	}
 

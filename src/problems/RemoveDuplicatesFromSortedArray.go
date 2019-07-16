@@ -41,11 +41,11 @@ for (int i = 0; i < len; i++) {
 
 https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
  */
-func RemoveDuplicates(nums []int, method string) int {
-	switch method {
-	case "mine":
+func RemoveDuplicates(nums []int) int {
+	switch METHOD {
+	case METHOD_MINE:
 		return removeDuplicatesMine(nums)
-	case "lca":
+	case METHOD_LCA:
 		return removeDuplicatesLCA(nums)
 	}
 

@@ -15,13 +15,13 @@ package problems
 
 	https://leetcode-cn.com/problems/two-sum/
  */
-func TwoSum(nums []int, target int, method string) []int {
-	switch method {
-	case "baoli":
+func TwoSum(nums []int, target int) []int {
+	switch METHOD {
+	case METHOD_MINE:
 		return twoSumBaoli(nums, target)
-	case "hash2":
+	case METHOD_MINE2:
 		return twoSumHash2(nums, target)
-	case "hash1":
+	case METHOD_LCA:
 		return twoSumHash1(nums, target)
 	}
 

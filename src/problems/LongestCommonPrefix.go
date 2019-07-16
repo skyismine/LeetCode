@@ -27,11 +27,11 @@ import (
 
 https://leetcode-cn.com/problems/longest-common-prefix/
  */
-func LongestCommonPrefix(strs []string, method string) string {
-	switch method {
-	case "mine":
+func LongestCommonPrefix(strs []string) string {
+	switch METHOD {
+	case METHOD_MINE:
 		return longestCommonPrefixMine(strs)
-	case "lca":
+	case METHOD_LCA:
 		return longestCommonPrefixLCA(strs)
 	}
 

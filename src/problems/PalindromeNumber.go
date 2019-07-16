@@ -25,11 +25,11 @@ package problems
 
 https://leetcode-cn.com/problems/palindrome-number/
  */
-func IsPalindrome(x int, method string) bool {
-	switch method {
-	case "mine":
+func IsPalindrome(x int) bool {
+	switch METHOD {
+	case METHOD_MINE:
 		return isPalindromeMine(x)
-	case "lca":
+	case METHOD_LCA:
 		return isPalindromeLCA(x)
 	}
 	return false

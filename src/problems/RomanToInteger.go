@@ -46,13 +46,13 @@ C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。
 
 https://leetcode-cn.com/problems/roman-to-integer/
  */
-func RomanToInt(s,method string) int {
-	switch method {
-	case "mine":
+func RomanToInt(s string) int {
+	switch METHOD {
+	case METHOD_MINE:
 		return romanToIntMine(s)
-	case "mine2":
+	case METHOD_MINE2:
 		return romanToIntMine2(s)
-	case "lca":
+	case METHOD_LCA:
 		return romanToIntLCA(s)
 	}
 

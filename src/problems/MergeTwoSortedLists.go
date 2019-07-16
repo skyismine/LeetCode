@@ -23,11 +23,11 @@ type ListNode struct {
 	Val int
 	Next *ListNode
 }
-func MergeTwoLists(l1 *ListNode, l2 *ListNode, method string) *ListNode {
-	switch method {
-	case "mine":
+func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	switch METHOD {
+	case METHOD_MINE:
 		return mergeTwoListsMine(l1, l2)
-	case "lca":
+	case METHOD_LCA:
 		return mergeTwoListsLCA(l1, l2)
 	}
 
