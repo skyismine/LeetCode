@@ -1,5 +1,7 @@
 package commonds
 
+import "log"
+
 /**
 链表结构
  */
@@ -35,4 +37,22 @@ func (linkedlist *LinkedList) Insert(data interface{}) {
 		node = node.Next
 	}
 	node.Next = newnode
+}
+
+func (linkedlist *LinkedList) Operator(optr func(data interface{}) bool) {
+	node := linkedlist.First
+	for node != nil {
+		if !optr(node.Data) {
+			return
+		}
+		node = node.Next
+	}
+}
+
+func (linkedlist *LinkedList) Show() {
+	node := linkedlist.First
+	for node != nil {
+		log.Println(node.Data)
+		node = node.Next
+	}
 }
