@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"leetcode/src/problems"
 	"log"
 	"os"
-	"problems"
 	"runtime/pprof"
 	"time"
 )

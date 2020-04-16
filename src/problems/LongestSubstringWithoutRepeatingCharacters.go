@@ -3,7 +3,7 @@ package problems
 import (
 	"bytes"
 	"fmt"
-	"utils"
+	"leetcode/src/utils"
 )
 
 /**

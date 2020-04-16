@@ -1,6 +1,6 @@
 package problems
 
-import "utils"
+import "leetcode/src/utils"
 
 /**
 题目描述：

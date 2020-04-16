@@ -1,6 +1,6 @@
 package commonds
 
-import "utils"
+import "leetcode/src/utils"
 
 /**
 字典树

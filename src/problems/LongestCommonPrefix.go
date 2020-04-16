@@ -1,9 +1,9 @@
 package problems
 
 import (
-	"commonds"
+	"leetcode/src/commonds"
+	"leetcode/src/utils"
 	"math"
-	"utils"
 )
 
 /**

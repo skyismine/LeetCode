@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-export GOPATH=$GOPATH:`pwd`
-
-go build leetcode
+go build -o bin/leetcode leetcode/src/leetcode
