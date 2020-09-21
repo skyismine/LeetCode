@@ -127,7 +127,6 @@ func main() {
 	fmt.Println(problems.ZigzagConvert("LEETCODEISHIRING", 3))
 	fmt.Println(problems.ZigzagConvert("LEETCODEISHIRING", 4))
 	fmt.Println(problems.ZigzagConvert("A", 1))
-	*/
 	fmt.Println(problems.MyAtoi("42"))
 	fmt.Println(problems.MyAtoi("-42"))
 	fmt.Println(problems.MyAtoi("4193 with words"))
@@ -141,7 +140,8 @@ func main() {
 	fmt.Println(problems.MyAtoi("1"))
 	fmt.Println(problems.MyAtoi("0-1"))
 	fmt.Println(problems.MyAtoi("10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000522545459"))
-	fmt.Println(problems.MyAtoi("+004500"))
+	fmt.Println(problems.MyAtoi("+004500"))*/
+	fmt.Println(problems.ContainerWithMostWater([]int{1,8,6,2,5,4,8,3,7}))
 	defer func() {
 		fmt.Println("cost time:", time.Since(start))
 	}()
